@@ -2,3 +2,34 @@
     font-size: 16px;
     color: blue;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+}
+
+.paragraph {
+    text-align: center;
+    color: #663399;
+    padding: 2em;
+}
+
+p {
+    width: 50%;
+    background-color: #0CBABA;
+    border: #FFD4CA 1px dashed;
+    padding: 2em;
+    margin: 10px;
+    text-align: center;
+}
+
+span {
+    color: #EFD5C3;
+}
