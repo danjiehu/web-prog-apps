@@ -1,6 +1,15 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+i {
+    margin: 0.2em;
 }
 
 .flex-container {
@@ -28,6 +37,7 @@ body {
 }
 
 #nav-bar {
+    margin: 1em 0;
     justify-content: space-around;
     align-items: center;
     height: 10%;
@@ -43,6 +53,14 @@ body {
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
+}
+
+.nav-bar-item:hover {
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 2px 2px #424242;
 }
 
 .section-container {
@@ -95,4 +113,63 @@ body {
     font-size: 1.8em;
     color: #ffffff;
     font-weight: 100;
+}
+
+.pricing-container {
+    width: 60%;
+    padding: 3em;
+    margin: 5em auto;
+    border: 0.1em solid #000000;
+    box-shadow: 1em 1em;
+}
+
+.pricing-container p {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.pricing-container li {
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+.btn {
+    font-size: 1em !important;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5em;
+    border: 0.1em solid #333333;
+    margin: 2em auto 5em auto;
+    padding: 0.5em;
+    width: 80%;
+}
+
+.btn:hover {
+    font-size: 1em !important;
+    font-weight: bold;
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5em;
+    border: 0.1em solid #333333;
+    margin: 2em auto 5em auto;
+    padding: 0.5em;
+    width: 80%;
+}
+
+#about-us {
+    background-color: #ff2677;
+    /*
+    text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    */
+    padding: 10em;
+    height: 20em !important;
+}
+
+#about-us p {
+    text-align: left !important;
 }
