@@ -1,0 +1,20 @@
+.sizing {
+    width: 90%;
+    margin: 1% auto;
+}
+
+.bottom-sticky {
+    position: sticky;
+    bottom: 20px;
+}
+
+.border-box {
+    background-color: white;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.card-container {
+    margin: 30px auto;
+}
