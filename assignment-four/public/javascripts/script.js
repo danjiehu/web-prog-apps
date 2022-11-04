@@ -31,6 +31,7 @@ function post() {
         handle.value = null;
         comment.value = null;
         console.log("hacker post forbidden");
+        alert("hacker post forbidden");
     } else {
         let newCard = createCard(handle.value, comment.value);
 
