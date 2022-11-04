@@ -1,6 +1,6 @@
 // console.log("hello");
 
-let arr = [];
+let arr = []; // not used 
 let demoComments = document.getElementsByName("demo");
 
 console.log(document.getElementsByName("demo"));
@@ -27,13 +27,19 @@ function post() {
     // console.log(handle.value);
     // console.log(comment.value);
 
-    if (Comment.value == "hacker") {
-        // do nothing
+    if (handle.value == "hacker") {
+        handle.value = null;
+        comment.value = null;
+        console.log("hacker post forbidden");
     } else {
         let newCard = createCard(handle.value, comment.value);
-        // arr.unshift(newCard);
-        // console.log(arr);
+
+        arr.unshift(newCard); // not used
+        console.log(arr); // not used
+
         let cardContainer = document.getElementById("card-container");
         cardContainer.prepend(newCard);
+        handle.value = null;
+        comment.value = null;
     }
 }
