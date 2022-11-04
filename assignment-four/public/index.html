@@ -14,7 +14,7 @@
 <body>
   <!-- start of mock comments -->
   <div class="sizing container">
-    <div class="row g-2">
+    <div class="row g-2" id="card-container">
       <!-- start of a card element -->
       <div class="col-md-6 col-lg-4" name="demo">
         <div class="p-2">
@@ -69,15 +69,16 @@
   <!-- start of an input card -->
   <div class="sizing bottom-sticky border-box">
     <div class="mb-3">
+      <!-- resume here -->
       <h5>create a new post</h5>
       <label for="exampleFormControlInput1" class="form-label">username</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="@handle">
+      <input type="email" class="form-control" id="handle" placeholder="@handle">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">comment</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" id="comment" rows="3"></textarea>
     </div>
-    <button type="button" class="btn btn-primary">POST</button>
+    <button type="button" class="btn btn-primary" onClick="post()">POST</button>
   </div>
   <!-- end of an input card -->
 
