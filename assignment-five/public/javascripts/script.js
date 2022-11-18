@@ -44,3 +44,26 @@ function post() {
         comment.value = null;
     }
 }
+
+function refreshCount() {
+    console.log("refreshCount() invoked");
+    let text = comment.value;
+    let currCount = text.trim().replace(/ /g, '').length;
+    let remainingCount = 280 - currCount;
+    counter.innerHTML = remainingCount;
+    if (remainingCount <= 0) {
+        postbtn.disabled = true;
+        counter.style.display = "none";
+        usermsg.innerHTML = "exceeded maximum length allowed";
+        usermsg.style.color = "#ee4e50";
+        usermsg.style.fontWeight = "400";
+    }
+    if (remainingCount > 0) {
+        postbtn.disabled = false;
+        counter.style.display = "inline";
+        usermsg.innerHTML = "character remaining...";
+        usermsg.style.color = "#91979d";
+        usermsg.style.fontWeight = "200";
+    }
+}
+

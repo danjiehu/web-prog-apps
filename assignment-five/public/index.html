@@ -76,13 +76,15 @@
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">comment</label>
-      <textarea class="form-control" id="comment" rows="3"></textarea>
+      <textarea class="form-control" id="comment" rows="3" onkeyup="refreshCount()"></textarea>
+      <span id="counter">280</span>
+      <span id="usermsg">character remaining...</span>
     </div>
     <div class="icon-container">
       <img class="icon" src="images/camera.png" alt="camera">
       <img class="icon" src="images/video.png" alt="video">
       <img class="icon" src="images/graph.png" alt="graph">
-      <button type="button" class="btn btn-primary" onClick="post()">POST</button>
+      <button id="postbtn" type="button" class="btn btn-primary" onClick="post()">POST</button>
     </div>
   </div>
   <!-- end of an input card -->
