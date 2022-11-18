@@ -2,7 +2,7 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 // Firebase provides an admin library to allow your server code (functions) to run in an authenticated mode
 
-const cors = require("cores")({ origin: true });
+const cors = require("cors")({ origin: true });
 
 admin.initializeApp();
 // Firebase provides an admin library to allow your server code (functions) to run in an authenticated mode
