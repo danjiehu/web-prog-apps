@@ -95,9 +95,11 @@ function postComment() {
         if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
                 postbtn.disabled = false;
+                handle.readOnly = false;
+                comment.readOnly = false;
                 handle.value = null; // clearing input for next comment
                 comment.value = null; // clearing input for next comment
-                // getComments();
+                window.location.reload();
             } else {
                 console.log("error: ", xhr.status);
 
@@ -107,11 +109,41 @@ function postComment() {
 
     console.log(JSON.stringify({ "handle": handle.value, "comment": comment.value }));
     xhr.send(JSON.stringify({ "handle": handle.value, "comment": comment.value }));
+    handle.readOnly = true;
+    comment.readOnly = true;
     postbtn.disabled = true;
 
 } // end of postComment()
 
 // client JS function 2: getComments()
+function getComments() {
+
+    console.log("invoking getComments()");
+
+    let xhr = new XMLHttpRequest();
+    let url = "https://us-central1-assignment-five-3959f.cloudfunctions.net/displayComments";
+    xhr.open('GET', url);
+
+    xhr.onreadystatechange = function () {
+        let DONE = 4;
+        let OK = 200;
+        if (xhr.readyState === DONE) {
+            if (xhr.status === OK) {
+                let commentArr = JSON.parse(xhr.responseText);
+                console.log("json response: ", commentArr);
+                commentArr.forEach(element => {
+                    let newCard = createCard(element.handle, element.comment);
+                    let cardContainer = document.getElementById("card-container");
+                    cardContainer.prepend(newCard);
+                });
+            } else {
+                console.log("error: ", xhr.status);
+            }
+        }
+    }
+
+    xhr.send(null);
+}
 
 
 // client JS functon 3: deleteComment()

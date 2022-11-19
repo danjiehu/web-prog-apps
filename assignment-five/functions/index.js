@@ -27,7 +27,7 @@ exports.displayComments = functions.https.onRequest((request, response) => {
         // function body here - use the provided req and res from cors
 
         let posts = [];
-        return admin.firestore().collection("comments").orderBy("timestamp", "desc").get().then(
+        return admin.firestore().collection("comments").orderBy("timestamp").get().then(
             // order comments by latest first
             (snapshot) => {
                 console.log("snapshot: ", snapshot);
