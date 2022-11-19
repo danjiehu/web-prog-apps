@@ -36,28 +36,28 @@ function createCard(handle, comment) {
     return node.body.childNodes[0];
 }
 
-// post function
-function post() {
-    // console.log(handle.value);
-    // console.log(comment.value);
+// post function - no longer in use
+// function post() {
+//     // console.log(handle.value);
+//     // console.log(comment.value);
 
-    if (handle.value == "hacker") {
-        handle.value = null;
-        comment.value = null;
-        console.log("hacker post forbidden");
-        alert("hacker post forbidden");
-    } else {
-        let newCard = createCard(handle.value, comment.value);
+//     if (handle.value == "hacker") {
+//         handle.value = null;
+//         comment.value = null;
+//         console.log("hacker post forbidden");
+//         alert("hacker post forbidden");
+//     } else {
+//         let newCard = createCard(handle.value, comment.value);
 
-        arr.unshift(newCard); // not used
-        console.log(arr); // not used
+//         arr.unshift(newCard); // not used
+//         console.log(arr); // not used
 
-        let cardContainer = document.getElementById("card-container");
-        cardContainer.prepend(newCard);
-        handle.value = null;
-        comment.value = null;
-    }
-}
+//         let cardContainer = document.getElementById("card-container");
+//         cardContainer.prepend(newCard);
+//         handle.value = null;
+//         comment.value = null;
+//     }
+// }
 
 function refreshCount() {
     console.log("refreshCount() invoked");
