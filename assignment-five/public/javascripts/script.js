@@ -142,7 +142,7 @@ function getComments() {
         }
     }
 
-    xhr.send(null);
+    xhr.send(null); // ! do not forget
 }
 
 
