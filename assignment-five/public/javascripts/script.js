@@ -1,11 +1,25 @@
 // console.log("hello");
 
+emptyFieldCheck();
+
 let arr = []; // not used 
 let demoComments = document.getElementsByName("demo");
 
 console.log(document.getElementsByName("demo"));
 arr = Array.from(demoComments);
 console.log(arr);
+
+function emptyFieldCheck() {
+    if (!handle.value) {
+        postbtn.disabled = true;
+    }
+    if (!comment.value) {
+        postbtn.disabled = true;
+    }
+    if (handle.value && comment.value) {
+        postbtn.disabled = false;
+    }
+};
 
 // creating new post html function
 function createCard(handle, comment) {

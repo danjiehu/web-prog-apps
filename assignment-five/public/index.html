@@ -70,13 +70,14 @@
   <div class="sizing bottom-sticky border-box">
     <div class="mb-3">
       <!-- resume here -->
-      <h5>create a new post</h5>
+      <!-- <h5>create a new post</h5> -->
       <label for="exampleFormControlInput1" class="form-label">username</label>
-      <input type="email" class="form-control" id="handle" placeholder="@handle">
+      <input class="form-control" id="handle" placeholder="@handle" onblur="emptyFieldCheck()">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">comment</label>
-      <textarea class="form-control" id="comment" rows="3" onkeyup="refreshCount()"></textarea>
+      <textarea class="form-control" id="comment" rows="3" onkeyup="refreshCount()"
+        onblur="emptyFieldCheck()"></textarea>
       <span id="counter">280</span>
       <span id="usermsg">character remaining...</span>
     </div>
@@ -84,7 +85,7 @@
       <img class="icon" src="images/camera.png" alt="camera">
       <img class="icon" src="images/video.png" alt="video">
       <img class="icon" src="images/graph.png" alt="graph">
-      <button id="postbtn" type="button" class="btn btn-primary" onClick="post()" onblur="post()">POST</button>
+      <button id="postbtn" type="button" class="btn btn-primary" onClick="post()">POST</button>
     </div>
   </div>
   <!-- end of an input card -->

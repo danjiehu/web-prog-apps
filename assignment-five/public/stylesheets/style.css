@@ -5,25 +5,25 @@
 
 .bottom-sticky {
     position: sticky;
-    bottom: 50px;
+    bottom: 20px;
 }
 
 .border-box {
     background-color: white;
     border: 1px solid;
-    padding: 20px;
+    padding: 12px 30px 18px 30px;
     border-radius: 20px;
 }
 
 .icon {
-    width: 30px;
+    width: 28px;
 }
 
 .icon-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 60px 10px 0;
+    padding: 0 60px 0 0;
 }
 
 span {
