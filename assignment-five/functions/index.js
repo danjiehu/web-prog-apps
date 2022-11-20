@@ -45,7 +45,7 @@ exports.displayComments = functions.https.onRequest((request, response) => {
 }) // end of displayComments()
 // postman testing DONE
 
-// cloud function 3: deleteComments
+// cloud function 3: deleteComment
 exports.deleteComment = functions.https.onRequest((request, response) => {
     cors(request, response, () => {
         // function body here - use the provided req and res from cors
