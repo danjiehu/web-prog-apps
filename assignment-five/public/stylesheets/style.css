@@ -31,3 +31,8 @@ span {
     font-size: small;
     font-weight: 200;
 }
+
+
+.card .btn {
+    margin-left: 75%;
+}

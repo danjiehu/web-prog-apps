@@ -30,6 +30,7 @@ function createCard(handle, comment) {
     shtml += '<div class="card-body">';
     shtml += '<h6 class="card-subtitle mb-2 text-muted">' + handle + '</h6>';
     shtml += '<p class="card-text">' + comment + '</p>';
+    shtml += '<button type="button" class="btn btn-secondary btn-sm">delete</button>';
     shtml += '</div>' + '</div>' + '</div>' + '</div>';
 
     let node = new DOMParser().parseFromString(shtml, 'text/html');
