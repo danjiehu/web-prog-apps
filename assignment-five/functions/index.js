@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const cors = require("cors")({ origin: true });
+// require("firebase-functions/logger/compat"); // to be tested
 
 admin.initializeApp();
 
@@ -25,15 +26,17 @@ exports.storeComments = functions.https.onRequest((request, response) => {
 exports.displayComments = functions.https.onRequest((request, response) => {
     cors(request, response, () => {
         // function body here - use the provided req and res from cors
-
+        console.log("hello! displayComments invoked");
         let posts = [];
         return admin.firestore().collection("comments").orderBy("timestamp").get().then(
             // order comments by latest first
             (snapshot) => {
-                console.log("snapshot: ", snapshot);
+                console.log("snapshot: ", snapshot); // response snapshot is an array of matching documents based on query syntax
                 snapshot.forEach(
                     doc => {
-                        posts.push(doc.data());
+                        let docObj = {};
+                        docObj.id = doc.id;
+                        posts.push(Object.assign(docObj, doc.data())); // preparing for delete
                     }) // end of forEach
                 response.send(posts);
             } // end of snapshot

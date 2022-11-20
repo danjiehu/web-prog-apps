@@ -22,7 +22,7 @@ function emptyFieldCheck() {
 };
 
 // creating new post html function
-function createCard(handle, comment) {
+function createCard(handle, comment, id) {
 
     let shtml = '<div class="col-md-6 col-lg-4" name="demo">';
     shtml += '<div class="p-2">';
@@ -30,7 +30,7 @@ function createCard(handle, comment) {
     shtml += '<div class="card-body">';
     shtml += '<h6 class="card-subtitle mb-2 text-muted">' + handle + '</h6>';
     shtml += '<p class="card-text">' + comment + '</p>';
-    shtml += '<button type="button" class="btn btn-secondary btn-sm">delete</button>';
+    shtml += `<button type="button" class="btn btn-danger btn-sm" id=${id} onClick="deleteComment(this.id)">delete</button>`;
     shtml += '</div>' + '</div>' + '</div>' + '</div>';
 
     let node = new DOMParser().parseFromString(shtml, 'text/html');
@@ -100,7 +100,7 @@ function postComment() {
                 comment.readOnly = false;
                 handle.value = null; // clearing input for next comment
                 comment.value = null; // clearing input for next comment
-                window.location.reload();
+                window.location.reload(); // refresh page
             } else {
                 console.log("error: ", xhr.status);
 
@@ -133,7 +133,7 @@ function getComments() {
                 let commentArr = JSON.parse(xhr.responseText);
                 console.log("json response: ", commentArr);
                 commentArr.forEach(element => {
-                    let newCard = createCard(element.handle, element.comment);
+                    let newCard = createCard(element.handle, element.comment, element.id);
                     let cardContainer = document.getElementById("card-container");
                     cardContainer.prepend(newCard);
                 });
@@ -148,3 +148,28 @@ function getComments() {
 
 
 // client JS functon 3: deleteComment()
+function deleteComment(id) {
+    console.log("deleteComment() invoked");
+    // console.log("id.disabled: ", id.disabled);
+    document.getElementById(id).disabled = true;
+
+    let xhr = new XMLHttpRequest();
+    let url = "https://us-central1-assignment-five-3959f.cloudfunctions.net/deleteComment" + "?id=" + id;
+
+    xhr.open("DELETE", url);
+
+    xhr.onreadystatechange = function () {
+        let DONE = 4;
+        let OK = 200;
+        if (xhr.readyState === DONE) {
+            // if comment deleted successfully refresh page
+            if (xhr.status === OK) {
+                console.log(xhr.responseText);
+                window.location.reload();
+            }
+        } else {
+            console.log("delete error: " + xhr.status);
+        }
+    }
+    xhr.send(null);
+}
