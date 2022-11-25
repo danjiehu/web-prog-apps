@@ -60,3 +60,5 @@ exports.deleteComment = functions.https.onRequest((request, response) => {
 // let url = "https://myapp.net/postComments" + "?id=" + idValue + "&myVar=" + myVarValue;
 // request.query.id gives idValue and request.query.myVar gives myVarValue
 // postman testing DONE
+
+
