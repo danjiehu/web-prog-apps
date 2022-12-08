@@ -21,3 +21,7 @@ for (i = 0; i < arrLength; i++) {
 for (i = 0; i < myArray.length; i++) {
     console.log(myArray[i]);
 }
+
+
+let fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.shift()); // returns banana
